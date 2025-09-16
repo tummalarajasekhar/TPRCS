@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { Header } from '../components/header'
 import { Hero } from '../components/hero'
@@ -14,18 +14,10 @@ import { SERVICES } from '../lib/constants'
 import About from '../components/About'
 import SpecialOffer from '../components/specialOffer'
 
-export default function Home() {
-  const [mounted, setMounted] = useState(false)
+// 👇 Move the searchParams logic into a child component
+function HomeContent() {
   const searchParams = useSearchParams()
   const serviceParam = searchParams.get('service')
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return <div className="min-h-screen bg-white dark:bg-slate-900" />
-  }
 
   // Check if we're showing a specific service (for subdomain simulation)
   const currentService = serviceParam ? SERVICES.find(s => s.id === serviceParam) : null
@@ -33,13 +25,8 @@ export default function Home() {
   if (currentService) {
     return (
       <>
-      
         <Header showBackButton serviceName={currentService.name} />
         <ServicePage service={currentService} />
-        <div className="border border-red-500 z-10" >
-        
-        </div>
-        
         <Footer />
       </>
     )
@@ -47,7 +34,6 @@ export default function Home() {
 
   return (
     <>
-    
       <Header />
       <main>
         <Hero
@@ -64,5 +50,24 @@ export default function Home() {
       </main>
       <Footer />
     </>
+  )
+}
+
+export default function Home() {
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return <div className="min-h-screen bg-white dark:bg-slate-900" />
+  }
+
+  return (
+    // 👇 Wrap inside Suspense
+    <Suspense fallback={<div className="min-h-screen bg-white dark:bg-slate-900" />}>
+      <HomeContent />
+    </Suspense>
   )
 }
