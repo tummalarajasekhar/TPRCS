@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@netlify/plugin-nextjs": "^5.13.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-day-picker": "^5.2.1",
