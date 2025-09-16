@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState, Suspense } from 'react'
-import { useSearchParams } from 'next/navigation'
+
 import { Header } from '../components/header'
 import { Hero } from '../components/hero'
 import { ServicesGrid } from '../components/services-grid'
@@ -13,15 +13,23 @@ import { ServicePage } from '../components/service-page'
 import { SERVICES } from '../lib/constants'
 import About from '../components/About'
 import SpecialOffer from '../components/specialOffer'
+import { usePathname, useSearchParams } from 'next/navigation'
+
 
 // 👇 Move the searchParams logic into a child component
 function HomeContent() {
+  const pathname = usePathname()
   const searchParams = useSearchParams()
   const serviceParam = searchParams.get('service')
 
   // Check if we're showing a specific service (for subdomain simulation)
   const currentService = serviceParam ? SERVICES.find(s => s.id === serviceParam) : null
-
+  useEffect(() => {
+  if (window.location.hash === '#contact') {
+    const el = document.getElementById('contact')
+    if (el) el.scrollIntoView({ behavior: 'smooth' })
+  }
+}, [pathname])
   if (currentService) {
     return (
       <>

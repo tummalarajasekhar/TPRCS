@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ArrowRight, Code, Globe, TrendingUp } from 'lucide-react'
+import Link from 'next/link'
 import { Button } from './ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
 import { SERVICES } from '../lib/constants'
@@ -74,15 +75,12 @@ export function ServicesGrid() {
                       <span className="text-sm font-semibold text-teal-600 dark:text-teal-400">
                         {service.pricing}
                       </span>
-                      <Button
-                        asChild
-                        className="bg-teal-600 hover:bg-teal-700 text-white group-hover:shadow-lg transition-all duration-300"
-                      >
-                        <a href={getServiceUrl(service.id)}>
+                      <Link href={getServiceUrl(service.id)}>
+                        <Button className="bg-teal-600 hover:bg-teal-700 text-white group-hover:shadow-lg transition-all duration-300">
                           Explore {service.name.split(' ')[0]}
                           <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                      </Button>
+                        </Button>
+                      </Link>
                     </div>
                   </CardContent>
                 </Card>

@@ -7,14 +7,13 @@ export function getServiceFromSubdomain(host: string) {
   return SERVICES.find(service => service.subdomain === subdomain)
 }
 
+// Use internal route for production, safe for all environments
 export function getServiceUrl(serviceId: string) {
   const service = SERVICES.find(s => s.id === serviceId)
   if (!service) return '/'
   
-  if (process.env.NODE_ENV === 'production') {
-    return `https://${service.subdomain}.yourdomain.com`
-  }
-  return `/?service=${serviceId}`
+  // Internal route for all environments
+  return `/services/${serviceId}`
 }
 
 export function isSubdomain(host: string) {
