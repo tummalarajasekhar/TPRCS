@@ -1,5 +1,5 @@
 import './globals.css'
-
+import Script from 'next/script'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '../components/theme-provider'
@@ -32,6 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <head>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385627701"></script>
+        <Script id="google-analytics" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-17385627701');
+        `}</Script>
         <link rel="icon" href="/logo.webp" />
         <script
           type="application/ld+json"
