@@ -8,20 +8,46 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'TPRCS- Professional Services | Web Development, Abroad Consultancy & Mutual Funds',
-  description: 'Professional services for website development, abroad consultancy, and mutual fund investments. Get expert guidance and solutions tailored to your needs.',
-  keywords: 'website development, abroad consultancy, mutual funds, professional services, web design',
+  description:
+    'Professional services for website development, abroad consultancy, and mutual fund investments. Get expert guidance and solutions tailored to your needs.',
+  keywords:
+    'website development, abroad consultancy, mutual funds, professional services, web design',
   authors: [{ name: 'TPRCS Team' }],
+  alternates: {
+    canonical: 'https://tprcs.com',
+  },
   openGraph: {
     title: 'TPRCS - Professional Services',
-    description: 'Professional services for website development, abroad consultancy, and mutual fund investments.',
+    description:
+      'Professional services for website development, abroad consultancy, and mutual fund investments.',
     type: 'website',
     locale: 'en_US',
+    url: 'https://tprcs.com',
+    siteName: 'TPRCS',
+    images: [
+      {
+        url: 'https://tprcs.com/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'TPRCS Services Preview',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'TPRCS - Professional Services',
-    description: 'Professional services for website development, abroad consultancy, and mutual fund investments.',
-  }
+    description:
+      'Professional services for website development, abroad consultancy, and mutual fund investments.',
+    images: ['https://tprcs.com/og-image.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({
@@ -39,7 +65,7 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', 'AW-17385627701');
         `}</Script>
-        <link rel="icon" href="/logo.webp" />
+        <link rel="icon" href="/og-image.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -49,7 +75,7 @@ export default function RootLayout({
               "name": "TPRCS",
               "description": "Professional services for website development, abroad consultancy, and mutual fund investments",
               "url": "https://tprcs.com",
-              "logo": "https://tprcs.com/logo.png",
+              "logo": "https://tprcs.com/og-image.png",
               "contactPoint": {
                 "@type": "ContactPoint",
                 "telephone": "+1-555-123-4567",
