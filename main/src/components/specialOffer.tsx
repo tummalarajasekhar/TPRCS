@@ -66,8 +66,8 @@ const SpecialOffer = () => {
             Basic Website
           </div>
           <div className="mt-2 text-3xl font-extrabold text-red-600">
-            <span className="mr-2 text-lg line-through text-gray-600">₹4,999</span>
-            ₹2,000
+            <span className="mr-2 text-lg line-through text-gray-600">₹9,999</span>
+            ₹ 3,999/year
           </div>
           <div className="mt-2 text-sm text-gray-700">5 Page Responsive Site</div>
 
