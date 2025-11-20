@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+       animation: {
+        'float': 'float 8s ease-in-out infinite',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
