@@ -91,10 +91,10 @@ export function ContactForm() {
                     <div className="w-12 h-12 bg-gradient-to-br from-teal-500 to-amber-500 rounded-full flex items-center justify-center">
                       <Phone className="w-6 h-6 text-white" />
                     </div>
-                    <a className='no-underline' href="tel:+917989167008">
+                    <a className='no-underline' href="tel:+9176794091177">
                     <div>
                       <h3 className="font-semibold text-slate-900 dark:text-white">Phone</h3>
-                      <p className="text-slate-600 dark:text-slate-300">+91 7989167008</p>
+                      <p className="text-slate-600 dark:text-slate-300">+91 7674091177</p>
                     </div>
                     </a>
                   </div>

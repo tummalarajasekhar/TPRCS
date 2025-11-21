@@ -84,7 +84,7 @@ export default function Page() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.1 }}
           whileHover={{ scale: 1.08, boxShadow: "0px 0px 20px rgba(255,165,0,0.6)" }}
-          href="https://wa.me/917989167008?text=Hello!%20I'm%20interested%20in%20your%20web%20development%20service"
+          href="https://wa.me/917674091177?text=Hello!%20I'm%20interested%20in%20your%20web%20development%20service"
           className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 mt-4 text-lg font-bold rounded-full shadow-lg relative overflow-hidden transition"
         >
           <FaWhatsapp className="mr-2 text-xl" /> Get Started on WhatsApp
@@ -255,7 +255,7 @@ export default function Page() {
           </p>
           <motion.a
             whileHover={{ scale: 1.08, boxShadow: "0px 0px 20px rgba(255,165,0,0.6)" }}
-            href="https://wa.me/917989167008?text=Hello!%20I'm%20interested%20in%20your%20web%20development%20service"
+            href="https://wa.me/917674091177?text=Hello!%20I'm%20interested%20in%20your%20web%20development%20service"
             className="inline-flex items-center justify-center bg-gradient-to-r from-orange-500 to-orange-600 text-white px-10 py-4 text-lg font-bold rounded-full shadow-lg relative overflow-hidden transition"
           >
             <FaWhatsapp className="mr-2 text-xl" /> Message Us on WhatsApp

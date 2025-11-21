@@ -1,4 +1,3 @@
-
 'use client'
 
 import { useState, useEffect } from 'react'
@@ -66,8 +65,28 @@ export function Header({ showBackButton = false, serviceName }: HeaderProps) {
               </a>
             ))}
             
+            {/* 🚀 MERN TRAINING BUTTON - DESKTOP */}
+            {!showBackButton && (
+              <Link 
+                href="/mern-training"
+                className="
+                  // Unique Styling
+                  bg-red-600 dark:bg-yellow-500 
+                  hover:bg-red-700 dark:hover:bg-yellow-600 
+                  text-white font-bold 
+                  py-1.5 px-4 
+                  rounded-full 
+                  shadow-md 
+                  transition duration-300 ease-in-out
+                  transform hover:scale-105
+                "
+              >
+                MERN Training
+              </Link>
+            )}
+            
             {showBackButton && serviceName && (
-              <span className="text-slate-600 dark:text-slate-300">
+              <span className="text-slate-600 dark:text-slate-300 font-semibold">
                 {serviceName}
               </span>
             )}
@@ -130,6 +149,28 @@ export function Header({ showBackButton = false, serviceName }: HeaderProps) {
                   {item.name}
                 </a>
               ))}
+
+              {/* 🚀 MERN TRAINING BUTTON - MOBILE */}
+              {!showBackButton && (
+                <Link 
+                  href="/mern-training"
+                  className="
+                    w-full text-center
+                    bg-red-600 dark:bg-red-500 
+                    hover:bg-red-700 dark:hover:bg-red-600 
+                    text-white font-bold 
+                    py-2 px-4 
+                    rounded-lg 
+                    shadow-md 
+                    transition duration-300
+                  "
+                  onClick={() => setIsOpen(false)} // Close menu on click
+                >
+                  Explore MERN Training
+                </Link>
+              )}
+              
+
              {!callback && (<Button className="w-full sm:hidden bg-teal-600 hover:bg-teal-700 text-white" onClick={() => { setCallback(true);  }}>
                 <Phone className="w-4 h-4 mr-2" />
                 Request Callback
