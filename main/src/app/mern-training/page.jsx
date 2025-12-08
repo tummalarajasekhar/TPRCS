@@ -422,15 +422,15 @@ export default function MernTrainingPage() {
 
 						<div className="mb-4 mt-2">
 							<label className="block text-sm font-medium text-slate-700 mb-1">Full Name</label>
-							<input required type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" className="w-full text-white text-slate-900 px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+							<input required type="text" name="name" value={formData.name} onChange={handleChange} placeholder="John Doe" className="w-full dark:text-white	 text-slate-900 px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
 						</div>
 						<div className="mb-4">
 							<label className="block text-sm font-medium text-slate-700 mb-1">Email Address</label>
-							<input required type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" className="w-full text-white 	text-slate-900 px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+							<input required type="email" name="email" value={formData.email} onChange={handleChange} placeholder="john@example.com" className="w-full dark:text-white	 	text-slate-900 px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
 						</div>
 						<div className="mb-4">
 							<label className="block text-sm font-medium text-slate-700 mb-1">Phone Number</label>
-							<input required type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 7674091177" className="w-full text-white text-slate-900 px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
+							<input required type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="+91 7674091177" className="w-full dark:text-white	 text-slate-900 px-4 py-2 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none" />
 						</div>
 
 						{/* --- THIS IS THE VISUAL OFFER TICKET INSIDE THE FORM --- */}
