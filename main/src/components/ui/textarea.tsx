@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { cn } from '../../lib/utils';
+import { cn } from '../../app/lib/utils';
 
 // ✅ use type alias instead of empty interface
 type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>;

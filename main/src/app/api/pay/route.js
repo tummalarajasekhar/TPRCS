@@ -1,34 +1,36 @@
 import { NextResponse } from 'next/server';
-import { phonePe } from '../../../lib/phonepe'; // Import the initialized client
-import { StandardCheckoutPayRequest } from 'pg-sdk-node';
+import { createPhonePeOrder } from './phonepe'; // Import the initialized client
+
 
 export async function POST(req) {
-  if (!phonePe) {
+  if (!createPhonePeOrder) {
     return NextResponse.json({ success: false, message: 'Payment gateway not initialized' }, { status: 500 });
   }
+  // return NextResponse.json({ 
+  //           success: true, 
+  //           redirectUrl: "tprcs.com"
+  //       }, { status: 200 });
 
   try {
     // 1. **Input Validation:** Get validated data from the client
     const { orderId, amount, userId } = await req.json(); 
 
     // 2. **Build the Request:** Use the SDK method
-    const request = StandardCheckoutPayRequest.build_request({
-      merchantOrderId: orderId, // Your unique order ID
-      amount: amount * 100, // Amount in paise
-      redirectUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/payment-redirect`,
-      redirectMode: 'REDIRECT', // As specified in docs
-      callbackUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/api/webhook/phonepe`, // Your webhook handler
-      // Add other required fields like: 
-      // merchantUserId: userId
-    });
+    // const request = StandardCheckoutPayRequest.build_request({
+    //   merchantOrderId: orderId, // Your unique order ID
+    //   amount: amount * 100, // Amount in paise
+    //   redirectUrl: `${process.env.NEXT_PUBLIC_BASE_URL}/payment-redirect`,
+     
+    // });
 
     // 3. **Initiate Payment via SDK:** This securely handles hashing and API call
-    const response = await phonePe.pay(request);
+    const response = await createPhonePeOrder(orderId, amount, userId);
+    console.log("PhonePe Response:", response);
 
-    if (response.success && response.data.instrumentResponse.redirectInfo.url) {
+    if (response && response.redirectUrl) {
         return NextResponse.json({ 
             success: true, 
-            redirectUrl: response.data.instrumentResponse.redirectInfo.url 
+            redirectUrl: response.redirectUrl
         }, { status: 200 });
     }
 

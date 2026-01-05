@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 import { ServicePage } from '@/src/components/service-page'
-import { SERVICES } from '@/src/lib/constants'
+import { SERVICES } from '@/src/app/lib/constants'
 import { Header } from '@/src/components/header'
 import { Footer } from '@/src/components/footer'
 

@@ -1,4 +1,4 @@
-import { SERVICES } from '../../lib/constants'
+import { SERVICES } from '../lib/constants'
 
 export async function GET() {
   const baseUrl = process.env.NODE_ENV === 'production' 

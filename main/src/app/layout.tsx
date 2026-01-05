@@ -3,6 +3,7 @@ import Script from 'next/script'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '../components/theme-provider'
+import NextTopLoader from 'nextjs-toploader';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -58,7 +59,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className="dark">
       <head>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385627701"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17385627701"></script>
         <Script id="google-analytics" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
           function gtag(){window.dataLayer.push(arguments);}
@@ -82,7 +83,7 @@ export default function RootLayout({
                 "contactType": "customer service",
                 "email": "info@tprcs.com"
               },
-              
+
               "service": [
                 {
                   "@type": "Service",
@@ -90,7 +91,7 @@ export default function RootLayout({
                   "description": "Custom websites that convert visitors into customers"
                 },
                 {
-                  "@type": "Service", 
+                  "@type": "Service",
                   "name": "Abroad Consultancy",
                   "description": "Expert guidance for studying and working abroad"
                 },
@@ -105,6 +106,16 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
+        <NextTopLoader
+          color="#2299DD"
+          initialPosition={0.08}
+          crawlSpeed={200}
+          height={3}
+          crawl={true}
+          showSpinner={false}
+          easing="ease"
+          speed={200}
+        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

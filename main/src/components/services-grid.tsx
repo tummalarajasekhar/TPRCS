@@ -5,8 +5,8 @@ import { ArrowRight, Code, Globe, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from './ui/button'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card'
-import { SERVICES } from '../lib/constants'
-import { getServiceUrl } from '../lib/subdomain'
+import { SERVICES } from '../app/lib/constants'
+import { getServiceUrl } from '../app/lib/subdomain'
 
 const iconMap = {
   Code,
