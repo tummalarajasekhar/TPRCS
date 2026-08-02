@@ -94,7 +94,7 @@ export function ContactForm() {
                     <a className='no-underline' href="tel:+9176794091177">
                     <div>
                       <h3 className="font-semibold text-slate-900 dark:text-white">Phone</h3>
-                      <p className="text-slate-600 dark:text-slate-300">+91 7674091177</p>
+                      <p className="text-slate-600 dark:text-slate-300">+91 6303368552</p>
                     </div>
                     </a>
                   </div>
